@@ -1,7 +1,7 @@
 import java.util.Scanner;
-class Pgmoccurencearray
+class Pgmminmaxarray
 {
-	static void occurence(int n,int a[])
+	static void minmax(int n,int a[])
 	{
 		int max=a[0],min=a[0];
 		for(int i=1;i<n;i++)
@@ -16,13 +16,15 @@ class Pgmoccurencearray
 		{
 			b[a[i]]++;
 		}
-		for(int i=0;i<n;i++)
+		while(min<max)
 		{
-			if(b[a[i]]!=0)
-			{
-				System.out.println(a[i]+"-"+b[a[i]]);
-				b[a[i]]=0;
-			}
+			while(b[min]==0)
+				min++;
+			while(b[max]==0)
+				max--;
+			System.out.print(max+" "+min+" ");
+			max--;
+			min++;
 		}
 	}
 	public static void main(String args[])
@@ -32,6 +34,6 @@ class Pgmoccurencearray
 		int arr[]=new int[n];
 		for(int i=0;i<n;i++)
 			arr[i]=s.nextInt();
-		occurence(n,arr);
+		minmax(n,arr);
 	}
 }
