@@ -4,7 +4,8 @@ class Pgmreversearray
 	static void reverse(int a[])
 	{
 		int n=a.length;//6
-		int i=0,j=n-1;
+		int i=0;
+		int j=n-1;
 		while(i<j)
 		{
 			int t=a[i];
